@@ -877,3 +877,101 @@ fi
         Command:
 
             sed '1d;$d' filename removes last line
+
+
+========================================================
+30.  ls && df -h, ls || df -h, ls & df -h, ls & df -h
+
+    COMMAND OPERATORS IN LINUX (&& , || , &)
+
+    --------------------------------------------------
+    ls && df -h
+    --------------------------------------------------
+
+        Meaning:
+            - Run the second command ONLY if the first
+              command succeeds.
+
+        Explanation:
+            - ls must succeed
+            - If ls is successful → df -h runs
+            - If ls fails → df -h does NOT run
+
+        Use case:
+            - Run next command only on success
+
+        Example:
+            ls && df -h
+
+
+    --------------------------------------------------
+    ls || df -h
+    --------------------------------------------------
+
+        Meaning:
+            - Run the second command ONLY if the first
+              command fails.
+
+        Explanation:
+            - If ls fails → df -h runs
+            - If ls succeeds → df -h does NOT run
+
+        Use case:
+            - Error handling
+            - Fallback command
+
+        Example:
+            ls || df -h
+
+
+    --------------------------------------------------
+    ls & df -h
+    --------------------------------------------------
+
+        Meaning:
+            - Run BOTH commands in parallel (background).
+
+        Explanation:
+            - ls runs in background
+            - df -h runs immediately
+            - Shell does not wait for ls to finish
+
+        Use case:
+            - Run commands simultaneously
+            - Speed up independent tasks
+
+        Example:
+            ls & df -h
+
+
+    --------------------------------------------------
+    ls ; df -h
+    --------------------------------------------------
+
+        Meaning:
+            - Run both commands sequentially,
+              regardless of success or failure.
+
+        Explanation:
+            - ls runs first
+            - df -h runs next
+            - No dependency between commands
+
+        Use case:
+            - Simple sequential execution
+
+        Example:
+            ls ; df -h
+
+
+    --------------------------------------------------
+    QUICK SUMMARY (INTERVIEW)
+    --------------------------------------------------
+
+        &&  → Run next command if previous succeeds
+        ||  → Run next command if previous fails
+        &   → Run command in background
+        ;   → Run commands one after another
+
+
+
