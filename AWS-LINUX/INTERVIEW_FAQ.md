@@ -5,8 +5,10 @@ find /path -name "filename"
 Examples:
 
 By name: find . -name "*.log"
+
 By size: find / -size +100M
-Recently modified: find /var/log -mtime -1
+
+Recently modified: find /var/log -mtime -7
 
 #### 2. Which Linux distro did you use in your project?
 
